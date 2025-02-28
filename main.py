@@ -30,7 +30,7 @@ if st.button("🚀 Generate Travel Plan"):
         # Check if API key is available
         try:
             from TravelAgents import GROQ_API_KEY
-            if not groq_api_key:
+            if not GROQ_API_KEY:
                 st.error("⚠️ GROQ API key is missing. Please set it in your environment variables or Streamlit secrets.")
                 st.stop()
 
