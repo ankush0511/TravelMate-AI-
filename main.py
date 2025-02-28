@@ -29,14 +29,14 @@ if st.button("🚀 Generate Travel Plan"):
 
         # Check if API key is available
         try:
-            from TravelAgents import groq_api_key
+            from TravelAgents import GROQ_API_KEY
             if not groq_api_key:
                 st.error("⚠️ GROQ API key is missing. Please set it in your environment variables or Streamlit secrets.")
                 st.stop()
 
             # Test the API key with a simple call
             from langchain_groq import ChatGroq
-            test_llm = ChatGroq(api_key=groq_api_key, model='groq/Gemma2-9b-It')
+            test_llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It')
             # No need to actually call the API, just initialize to check configuration
 
         except Exception as e:
