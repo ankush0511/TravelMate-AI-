@@ -21,7 +21,7 @@ guide_expert = Agent(
     tools=[search_web_tool],
     verbose=True,
     max_iter=5,
-    llm=ChatGroq(api_key=groq_api_key, model='groq/Gemma2-9b-It'),
+    llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It'),
     allow_delegation=False,
 )
 
@@ -33,7 +33,7 @@ location_expert = Agent(
     tools=[search_web_tool],
     verbose=True,
     max_iter=5,
-    llm=ChatGroq(api_key=groq_api_key, model='groq/Gemma2-9b-It'),
+    llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It'),
     allow_delegation=False,
 )
 
@@ -44,6 +44,6 @@ planner_expert = Agent(
     tools=[search_web_tool],
     verbose=True,
     max_iter=5,
-    llm=ChatGroq(api_key=groq_api_key, model='groq/Gemma2-9b-It'),
+    llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It'),
     allow_delegation=False,
 )
