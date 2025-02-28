@@ -8,8 +8,8 @@ from langchain_groq import ChatGroq
 import streamlit as st
 
 load_dotenv()
-# GROQ_API_KEY=st.secrets["GROQ_API_KEY"]
-groq_api_key = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY=st.secrets["GROQ_API_KEY"]
+# groq_api_key = os.getenv("GROQ_API_KEY")
 llm = ChatGroq(api_key=groq_api_key, model='groq/Gemma2-9b-It')
 
 # Agents
