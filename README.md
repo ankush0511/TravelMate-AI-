@@ -33,6 +33,11 @@ pip install -r requirements.txt
 ```env
 OLLAMA_API_KEY=your_ollama_api_key
 ```
+### Using Ollama
+Install Ollama
+```bash
+ollama run llama3.1
+```
 
 ### 4️⃣ Run the Application
 ```bash
@@ -41,9 +46,7 @@ streamlit run main.py
 
 ## Project Structure 📂
 ```
-travelmate-ai/                
-│── templates/
-│   ├── resume.html          # Frontend UI
+travelmate-ai/    
 │── TravelAgents.py          # AI Agents
 │── TravelTasks.py           # Task Definitions
 │── TravelTools.py           # Utility Tools
@@ -66,5 +69,5 @@ travelmate-ai/
 This project is licensed under the **MIT License**.
 
 ## Author 👨‍💻
-Developed by **Your Name**. Contributions are welcome!
+Developed by **Ankush Chaudhary**. Contributions are welcome!
 
