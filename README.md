@@ -19,7 +19,7 @@ TravelMate AI is a **Flask and Streamlit-based AI travel assistant** that helps 
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/travelmate-ai.git
+git clone https://github.com/ankush0511/TravelMate-AI-
 cd travelmate-ai
 ```
 
