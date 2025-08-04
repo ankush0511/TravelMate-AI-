@@ -5,11 +5,19 @@ import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 import streamlit as st
+from crewai import LLM
+
+GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
+
+llm=LLm(
+    model='groq/gemini-2.5-flash',
+    api_key=GOOGLE_API_KEY
+)
 
 load_dotenv()
 GROQ_API_KEY=st.secrets["GROQ_API_KEY"]
 # groq_api_key = os.getenv("GROQ_API_KEY")
-llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash')
+# llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash')
 
 # Agents
 guide_expert = Agent(
@@ -20,7 +28,8 @@ guide_expert = Agent(
     tools=[search_web_tool],
     verbose=True,
     max_iter=5,
-    llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
+    # llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
+    llm=llm,
     allow_delegation=False,
 )
 
@@ -32,7 +41,8 @@ location_expert = Agent(
     tools=[search_web_tool],
     verbose=True,
     max_iter=5,
-    llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
+    # llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
+    llm=llm,
     allow_delegation=False,
 )
 
@@ -43,6 +53,7 @@ planner_expert = Agent(
     tools=[search_web_tool],
     verbose=True,
     max_iter=5,
-    llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
+    # llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
+    llm=llm,
     allow_delegation=False,
 )

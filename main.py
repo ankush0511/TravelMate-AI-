@@ -4,6 +4,15 @@ from TravelTasks import location_task, guide_task, planner_task
 from crewai import Crew, Process
 import streamlit as st
 # Streamlit App Title
+from crewai import LLM
+
+GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
+
+llm=LLm(
+    model='groq/gemini-2.5-flash',
+    api_key=GOOGLE_API_KEY
+)
+
 st.title("🌍 TravelMate AI 🤖")
 
 st.markdown("""
@@ -36,7 +45,8 @@ if st.button("🚀 Generate Travel Plan"):
 
             # Test the API key with a simple call
             from langchain_groq import ChatGroq
-            test_llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It')
+            # test_llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It')
+            test_llm=llm
             # No need to actually call the API, just initialize to check configuration
 
         except Exception as e:
