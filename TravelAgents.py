@@ -9,7 +9,7 @@ import streamlit as st
 load_dotenv()
 GROQ_API_KEY=st.secrets["GROQ_API_KEY"]
 # groq_api_key = os.getenv("GROQ_API_KEY")
-llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It')
+llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash')
 
 # Agents
 guide_expert = Agent(
