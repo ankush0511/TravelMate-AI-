@@ -9,7 +9,7 @@ from crewai import LLM
 
 GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
 
-llm=LLm(
+llm=LLM(
     model='groq/gemini-2.5-flash',
     api_key=GOOGLE_API_KEY
 )
