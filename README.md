@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ### 3️⃣ Configure Environment Variables
 - Create a `.env` file and add your API keys
 ```env
-OLLAMA_API_KEY=your_ollama_api_key
+GOOGLE_API_KEY=GOOGLE_API_KEY
 ```
 ### Using Ollama
 Install Ollama

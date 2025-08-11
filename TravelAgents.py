@@ -3,21 +3,19 @@ from TravelTools import search_web_tool
 from crewai import LLM
 import os
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
 import streamlit as st
 from crewai import LLM
+import os
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
 
-GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
+# GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
+GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 
 llm=LLM(
-    model='groq/gemini-2.5-flash',
+    model='gemini/gemini-2.5-flash',
     api_key=GOOGLE_API_KEY
 )
-
-load_dotenv()
-GROQ_API_KEY=st.secrets["GROQ_API_KEY"]
-# groq_api_key = os.getenv("GROQ_API_KEY")
-# llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash')
 
 # Agents
 guide_expert = Agent(
@@ -26,9 +24,8 @@ guide_expert = Agent(
     "Provides information on things to do in the city based on user interests.",
     backstory="A local expert passionate about sharing city experiences.",
     tools=[search_web_tool],
-    verbose=True,
+    # verbose=True,
     max_iter=5,
-    # llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
     llm=llm,
     allow_delegation=False,
 )
@@ -39,9 +36,8 @@ location_expert = Agent(
     backstory=
     "A seasoned traveler who knows everything about different cities.",
     tools=[search_web_tool],
-    verbose=True,
+    # verbose=True,
     max_iter=5,
-    # llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
     llm=llm,
     allow_delegation=False,
 )
@@ -51,9 +47,8 @@ planner_expert = Agent(
     goal="Compiles all gathered information to create a travel plan.",
     backstory="An expert in planning seamless travel itineraries.",
     tools=[search_web_tool],
-    verbose=True,
+    # verbose=True,
     max_iter=5,
-    # llm=ChatGroq(api_key=GROQ_API_KEY, model='groq/gemini-2.5-flash'),
     llm=llm,
     allow_delegation=False,
 )

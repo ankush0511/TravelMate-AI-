@@ -3,15 +3,20 @@ from TravelAgents import guide_expert, location_expert, planner_expert
 from TravelTasks import location_task, guide_task, planner_task
 from crewai import Crew, Process
 import streamlit as st
-# Streamlit App Title
 from crewai import LLM
+import os
+from dotenv import load_dotenv
 
-GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
+load_dotenv()  # Load environment variables from .env file
+
+GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
+# GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
 
 llm=LLM(
-    model='groq/gemini-2.5-flash',
+    model='gemini/gemini-2.5-flash',
     api_key=GOOGLE_API_KEY
 )
+st.write(llm.call("Hello, world!"))  # Test LLM connection
 
 st.title("🌍 TravelMate AI 🤖")
 
@@ -38,14 +43,12 @@ if st.button("🚀 Generate Travel Plan"):
 
         # Check if API key is available
         try:
-            from TravelAgents import GROQ_API_KEY
-            if not GROQ_API_KEY:
+            from TravelAgents import GOOGLE_API_KEY
+            if not GOOGLE_API_KEY:
                 st.error("⚠️ GROQ API key is missing. Please set it in your environment variables or Streamlit secrets.")
                 st.stop()
 
-            # Test the API key with a simple call
-            from langchain_groq import ChatGroq
-            # test_llm = ChatGroq(api_key=GROQ_API_KEY, model='groq/Gemma2-9b-It')
+        
             test_llm=llm
             # No need to actually call the API, just initialize to check configuration
 
@@ -66,7 +69,7 @@ if st.button("🚀 Generate Travel Plan"):
             tasks=[loc_task, guid_task, plan_task],
             process=Process.sequential,
             full_output=True,
-            verbose=True,
+            # verbose=True,
         )
 
         # Run Crew AI

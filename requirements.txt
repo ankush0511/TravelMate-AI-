@@ -1,9 +1,8 @@
 streamlit
-crewai[tools]
-pysqlite3-binary
 crewai
 langchain
 langchain_community
 crewai_tools
 duckduckgo-search
-langchain-groq
+crewai_tools
+pysqlite3-binary
