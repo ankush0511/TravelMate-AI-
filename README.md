@@ -60,6 +60,10 @@ travelmate-ai/
 2️⃣ AI processes your input and gathers data.
 3️⃣ Get a **personalized travel itinerary** with recommendations.
 
+## Demo & Screenshot
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1fd1a48-0cfb-453e-8e24-8bf1a81a0642" />
+
+
 ## Future Enhancements 🌟
 - Integration with **real-time APIs** (flights, hotels, events)
 - Voice-enabled travel assistant
