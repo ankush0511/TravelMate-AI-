@@ -1,6 +1,6 @@
 # TravelMate AI 🌍✈️
 
-TravelMate AI is a **Flask and Streamlit-based AI travel assistant** that helps you plan trips effortlessly. It provides personalized itineraries based on user interests, covering attractions, accommodations, food, and logistics.
+TravelMate AI is a **Streamlit-based AI travel assistant** that helps you plan trips effortlessly. It provides personalized itineraries based on user interests, covering attractions, accommodations, food, and logistics.
 
 ## Features 🚀
 - **Personalized Travel Itineraries**
@@ -10,9 +10,9 @@ TravelMate AI is a **Flask and Streamlit-based AI travel assistant** that helps 
 - **Multi-Agent AI Collaboration**
 
 ## Tech Stack 🛠️
-- **Backend**: Flask, CrewAI
+- **Backend**:  CrewAI
 - **Frontend**: Streamlit
-- **AI Models**: Ollama (Replace Groq with Ollama)
+- **AI Models**:  Groq 
 - **Tools**: DuckDuckGo Search, Website Scraping
 
 ## Setup Instructions 🔧
@@ -33,11 +33,7 @@ pip install -r requirements.txt
 ```env
 GOOGLE_API_KEY=GOOGLE_API_KEY
 ```
-### Using Ollama
-Install Ollama
-```bash
-ollama run llama3.1
-```
+
 
 ### 4️⃣ Run the Application
 ```bash
