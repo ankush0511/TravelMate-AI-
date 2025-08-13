@@ -58,6 +58,8 @@ travelmate-ai/
 
 ## Demo & Screenshot
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1fd1a48-0cfb-453e-8e24-8bf1a81a0642" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ff7feaa2-9218-4d61-bb68-c238b98d1ab0" />
+
 
 
 ## Future Enhancements 🌟
