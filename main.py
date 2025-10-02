@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env file
 
-GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
-# GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
+# GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY=st.secrets['GOOGLE_API_KEY']
 
 llm=LLM(
     model='gemini/gemini-2.5-flash',
